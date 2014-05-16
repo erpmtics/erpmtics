@@ -1,9 +1,9 @@
 # Erpmtics webapp and desktop application 
 ## Overview
 
-erpmtics is a project called when born like erp-admonedu
+erpmtics is a project that when born called erp-admonedu
 but the app have a lot of modules and i decide call erpmtics
-my starup is called artpc, the project is develop for 
+my startup is called artpc and this project is development for 
 Ing. Armando Ibarra <armandoibarra1@gmail.com>
 
 Website under construction: https://artpcweb.appspot.com
@@ -18,7 +18,7 @@ with version of Python since 2.7, are multi-platform, and uses
 the OS support to load the dynamic libraries, thus ensuring full compatibility.
 
 
-##Technology
+##Technologys
 
 * Python >= 2.7
 * Javascript 
@@ -30,40 +30,42 @@ the OS support to load the dynamic libraries, thus ensuring full compatibility.
 * PHP
 * wxPython >= 2.8 
 
-##Persistence -- Databases
+##Persistence 
   * Mysql
   * MongoDB
   * Local and Session Storage
+  * GAE datastore
 
-##OS to development
+##OS used for development
 
-***Client ArchLinux
-***Server Debian
+  *Client ArchLinux
+  *Server Debian
 
-my old distros:
-  -- Ubuntu
+  * Old distros used:
+      ** Ubuntu
 
-##My browsers:
+##Web Browser:
  ** Main: Chrome 
 	 -- firefox
 	 -- Opera
 
 ## Quick start
 
-To quickly build your environment
-
-
-
-## Modifying the Python Windows environment
-
-If you want to use a different Python version or add additional Python
-modules, just do the above with different Windows Python installers.
+To quickly build your environment if you use Linux, run the 
+file make-linux.sh, for Mac OS X make-macosx.sh and for windows
+make-win.bat
 
 ##Linux
-
+    $ chmod +x make-linux.sh
+    $ make-linux.sh (or sudo)
     $ wget "http://erpmtics.appspot.com/downloads/apps/desktop/erpmtics-client/linux/" 
     $ erpmtics
 
 ##Mac OS X
 
 ##Windows
+
+Modifying the Python Windows environment
+
+If you want to use a different Python version or add additional Python
+modules, just do the above with different Windows Python installers.
