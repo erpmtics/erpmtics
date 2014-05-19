@@ -1,0 +1,58 @@
+Requirements
+
+  Linux:
+
+      ** Python >= 2.7 
+      ** wxpython >= 2.8
+
+
+  Windows:
+
+      ** Python >= 2.7 
+     
+      ** pywin32 (<http://sourceforge.net/projects/pywin32/files/>) is required.  
+
+  Mac OS X:
+
+      ** Python >= 2.7 
+        
+
+Installation
+
+  
+  * ArchLinux:
+
+
+  * Debian and Ubuntu:
+  
+
+  * FreeBSD, Gentoo
+    
+
+  * Win32
+    
+
+  * Other
+    As with other Python packages, the standard way of installing from source
+    is:
+
+    python2 setup.py install (or sudo python2 setup.py install)
+
+The app provide a way to try to install dependencies and run without that user have to install the app manually, 
+Just use make for example on linux:
+
+  
+  Without sudo (Eg: Debian or Archlinux)
+
+  [armando@archlinux ~]$ su
+  [armando@archlinux ~]$ chmod u+x make-linux.sh    
+  [armando@archlinux ~]$ sh make-linux.sh
+
+  With sudo (Eg: Ubuntu)
+
+  [armando@archlinux ~]$ sudo chmod u+x make-linux.sh  
+  [armando@archlinux ~]$ sudo sh make-linux.sh  
+
+NOTE: If you have installed Python >= 2.7, the best way to install the app is run:
+
+  python2 setup.py install (or sudo python2 setup.py install)
