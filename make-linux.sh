@@ -77,11 +77,99 @@ DEPENDENCIES_NODE="connect sails yeoman-generator stylus jade"
 PATH_SEARCH_LOGS=$HOME
 DHCP_FILE_IP=$HOME/erpmtics.conf
 
+
+IP_SERVER="10.76.205.151"
 #
 deps_ok=NO
+DEPS_ALT=NO
+
+#vars for packages
+## ABSOLUTE path to the spawn-fcgi binary
+SPAWNFCGI="/usr/bin/spawn-fcgi"
 
 #ArchLinux manager packages
 alias install="sudo packer -S --noconfirm --noedit"
+
+check_dependences_alt(){
+
+	DEPS_ALT=YES
+
+	for dep in $DEPENDENCIES_ALT
+        do
+             if ! which $dep &>/dev/null;  then
+                        DEPS_ALT=NO
+                        echo "============================================================";
+                        echo "***** This script requires $dep to run but it is not installed";
+                        echo "============================================================";
+                        
+                        #echo "Try to install dependences";
+             fi
+
+        done
+
+}
+
+install_dependences_alt(){
+
+	DEPS_ALT=YES
+
+	for dep in $DEPENDENCIES_ALT
+        do
+             if ! which $dep &>/dev/null;  then
+                        DEPS_ALT=NO
+                        echo "============================================================";
+                        echo "***** This script requires $dep to run but it is not installed";
+                        echo "============================================================";
+                        install $dep
+                        #echo "Try to install dependences";
+             fi
+
+        done
+
+}
+
+DEPENDENCIES_ALT="expect spawn-fcgi"
+
+#Testing all dependences 
+echo "============================================================";
+echo -e "\n Please wait, checking dependences .. \n"
+echo "============================================================";
+
+if [ "$DEPS_ALT"=="NO" ]; then
+
+	echo -e "The operative system missing dependencies for the following libraries ..."
+
+	read -p "Do you wish to install dependences? [Yes (y) / No (n)]" choice
+	case "$choice" in 
+	  y|Y ) echo "yes"
+			install_dependences_alt
+
+			echo "Testing server, please wait ..."
+			sleep 2	
+			#install_dependences_manual
+			
+			;;
+	  n|N ) echo "no"
+			exit 0
+		
+		;;
+	  * ) echo "invalid or you dont' have a tty or you are test the script on your source code editor";
+	esac
+fi
+
+check_dependences_alt
+
+exec 2>&1
+
+if test x$PHP_FCGI_CHILDREN = x; then
+  PHP_FCGI_CHILDREN=4
+fi
+
+#redirect the terminal input to the telnet process.
+#telnet $HOST </dev/tty
+
+
+exit 0
 
 
 [ "$(whoami)" != 'root' ] && ( echo "########## WARNING: you are using a non-privileged account
@@ -301,3 +389,4 @@ if [ "$deps_ok"=="NO" ]; then
 fi
 
 exit 0
+
