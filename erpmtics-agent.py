@@ -14,6 +14,13 @@
 # Author: Ing. Armando Ibarra - armandoibarra1@gmail.com
 #----------------------------------------------------------------------
 
+#/usr/share/applications
+#
+#
+#
+#
+#
+
 # This script search data and send to server for example to know the status 
 # clinto (connected, shuttdown, etc) connecting to web server 
 
