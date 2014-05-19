@@ -47,6 +47,5 @@ def test():
 	print "Hello"
 
 if __name__=='__main__':
-	# Setup the 2 contexts.
-	#get_category_links(BASE_URL)
-    tracks = test()
+	# 
+    agent = test()
