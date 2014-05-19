@@ -1,0 +1,3 @@
+setuptools
+bbfreeze
+cx_Freeze
